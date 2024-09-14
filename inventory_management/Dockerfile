@@ -13,9 +13,5 @@ RUN pip install -r requirements.txt
 # Copy the app directory to the container's /app directory
 COPY . .
 
-EXPOSE 7001
 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "7001"]
-
-# CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "$PORT"]
-# CMD uvicorn app.main:app --host 0.0.0.0 --port $PORT
