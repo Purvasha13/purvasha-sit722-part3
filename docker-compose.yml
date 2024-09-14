@@ -1,1 +1,21 @@
-# Your Solution
+version: '3'
+services:
+  book_catalog:
+    image: book_catalog:v1
+    build: 
+      context: ./book_catalog
+      dockerfile: Dockerfile
+    container_name: book_catalog
+    environment:
+      - PORT=7000
+      - DATABASE_URL=postgresql://purva_sit722_part3_5p9u_user:m1v0Y4Av6utCIYQZvob84HrrPyIVNMNV@dpg-crihjg68ii6s73f3occg-a.oregon-postgres.render.com/purva_sit722_part3_5p9u
+
+  inventory_management:
+    image: inventory_management:v1
+    build: 
+      context: ./inventory_management
+      dockerfile: Dockerfile
+    container_name: inventory_management
+    environment:
+      - PORT=7001
+      - DATABASE_URL=postgresql://purva_sit722_part3_5p9u_user:m1v0Y4Av6utCIYQZvob84HrrPyIVNMNV@dpg-crihjg68ii6s73f3occg-a.oregon-postgres.render.com/purva_sit722_part3_5p9u
